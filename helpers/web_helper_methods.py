@@ -22,8 +22,6 @@ def initialize_driver(debug_mode = 0):
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--disable-dev-shm-usage')
 
-    # pdb.set_trace()
-    
     if debug_mode != 1:
         chrome_options.add_argument("--headless")
     

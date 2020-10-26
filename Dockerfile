@@ -15,9 +15,12 @@ RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 ENV DISPLAY=:99
 
 # upgrade pip
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
-ADD back_in_stock.py /
+VOLUME /back_in_stock
+WORKDIR /back_in_stock
+
+COPY back_in_stock.py /
 COPY . .
 
 RUN pip3 install selenium
